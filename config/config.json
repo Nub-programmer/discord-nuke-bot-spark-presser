@@ -1,3 +1,5 @@
+
+//config.json
 {
     "token": "", //put your token here
     "prefix": "!", // put ur desired prefix here
