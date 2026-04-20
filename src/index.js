@@ -75,7 +75,53 @@ nuker.on("messageCreate", (message) => {
 
         // Help
         if (message.content.startsWith(prefix + "help")) {
-            message.channel.send({embeds: [help]})
+            const helpEmbed = new MessageEmbed()
+                .setTitle("Presser Beta Commands")
+                .setDescription(
+                    `Here are the available commands:
+
+` +
+                    `**Mass Channels:**
+` +
+                    `	${prefix}mc [amount] (text) - Create multiple channels.
+` +
+                    `**Mass Channels & Ping:**
+` +
+                    `	${prefix}cp [amount] (text), {message} - Create channels and ping everyone.
+` +
+                    `**Mass Roles:**
+` +
+                    `	${prefix}mr [amount] (text) - Create multiple roles.
+` +
+                    `**Delete Channels:**
+` +
+                    `	${prefix}dc - Delete all channels.
+` +
+                    `**Delete Roles:**
+` +
+                    `	${prefix}dr - Delete all roles.
+` +
+                    `**Delete Emotes:**
+` +
+                    `	${prefix}de - Delete all emojis.
+` +
+                    `**Delete Stickers:**
+` +
+                    `	${prefix}ds - Delete all stickers.
+` +
+                    `**Mass Kick:**
+` +
+                    `	${prefix}mk - Kick all members.
+` +
+                    `**Mass Ban:**
+` +
+                    `	${prefix}mb - Ban all members.`
+                )
+                .setColor("#7289DA")
+                .setFooter("Presser Beta | For educational purposes only.")
+                .setTimestamp();
+
+            message.channel.send({ embeds: [helpEmbed] });
         }
 
         // Mass Channels
